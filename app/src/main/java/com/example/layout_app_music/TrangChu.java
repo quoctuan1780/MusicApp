@@ -1,13 +1,24 @@
 package com.example.layout_app_music;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 import com.example.layout_app_music.animation.BangXepHang;
 import com.example.layout_app_music.animation.ChucNangAdapter;
@@ -15,13 +26,18 @@ import com.example.layout_app_music.animation.GhiAm;
 import com.example.layout_app_music.animation.Online;
 import com.example.layout_app_music.animation.ThuVien;
 import com.example.layout_app_music.custom_view.AnhBoTron;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import androidx.appcompat.widget.Toolbar;
 
 
-public class TrangChu extends AppCompatActivity {
+public class TrangChu extends AppCompatActivity  {
+    ImageView imageView;
     private ViewPager vp_chucnang;
     private TabLayout tabLayout;
+    private DrawerLayout mDrawerLayout;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +48,60 @@ public class TrangChu extends AppCompatActivity {
         addTabs(vp_chucnang);
         tabLayout.setupWithViewPager(vp_chucnang);
         TaoBieuTuongChoTab();
+        TaoAnhNhacDangPhat();
+        init();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void init(){
+        Toolbar toolbar = findViewById(R.id.tb_action);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.setting_icon);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                mDrawerLayout.closeDrawers();
+                switch (item.getItemId()) {
+                    case R.id.nav_about:
+
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    @SuppressLint("WrongConstant")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(Gravity.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void TaoAnhNhacDangPhat(){
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.tdd);
+        Bitmap circularBitmap = AnhBoTron.getRoundedCornerBitmap(bitmap, 100);
+
+        imageView = (ImageView) findViewById(R.id.iv_baihatphat);
+        imageView.setImageBitmap(circularBitmap);
     }
 
     private void TaoBieuTuongChoTab(){
@@ -63,5 +133,19 @@ public class TrangChu extends AppCompatActivity {
         adapter.add(new BangXepHang(), "BXH");
         adapter.add(new GhiAm(), "GHI AM");
         vp_chucnang.setAdapter(adapter);
+    }
+
+    private void about() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.about))
+                .setMessage(getString(R.string.about_text))
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

@@ -4,5 +4,5 @@
     android:layout_height="wrap_content"
     android:gravity="bottom|center_horizontal"
     android:textColor="#707070"
-    android:textSize="15dp"
+    android:textSize="10dp"
     android:textStyle="bold" />

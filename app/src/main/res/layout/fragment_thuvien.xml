@@ -1,107 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    android:fillViewport="true"
     tools:context=".animation.ThuVien">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/ll_chucnang"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:gravity="center_vertical"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="20dp"
-                android:gravity="center"
-                android:layout_gravity="start|center_vertical">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/icon_user"
-                    app:srcCompat="@drawable/logo"
-                    tools:ignore="VectorDrawableCompat" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:layout_gravity="center_vertical">
-
-                <EditText
-                    android:id="@+id/tv_timkiem_trangchu"
-                    android:layout_width="290dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/search"
-                    android:drawableLeft="@drawable/icon_search"
-                    android:drawablePadding="10dp"
-                    android:hint="Tìm kiếm bài hát">
-
-                </EditText>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="10dp"
-                android:gravity="center"
-                android:layout_gravity="end|right|center_vertical">
-
-                <Button
-                    android:id="@+id/bt_caidat"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/icon_setting">
-                </Button>
-            </LinearLayout>
-        </LinearLayout>
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        //Quảng cáo
         <LinearLayout
             android:id="@+id/ll_quangcao"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_below="@+id/ll_chucnang"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="-3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="3dp"
-            app:layout_constraintTop_toTopOf="@id/ll_chucnang">
+            android:layout_height="wrap_content">
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/vp_quangcao"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
+                android:layout_height="100dp">
             </androidx.viewpager.widget.ViewPager>
         </LinearLayout>
-
         <LinearLayout
             android:id="@+id/ll_thuvien"
             android:layout_width="match_parent"
-            android:paddingTop="10dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/ll_quangcao"
-            app:layout_constraintTop_toTopOf="@id/ll_quangcao">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_quangcao">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,13 +39,9 @@
             </TextView>
         </LinearLayout>
         <ScrollView
-            android:id="@+id/sc_chucnang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/ll_thuvien"
-            app:layout_constraintTop_toTopOf="@id/ll_thuvien">
+            android:layout_below="@id/ll_thuvien">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,7 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#FAF6F6"
-                    android:paddingTop="10dp"
+                    android:paddingTop="5dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -186,7 +108,7 @@
                     android:id="@+id/ll_playlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:paddingTop="5dp"
                     android:background="#FAF6F6"
                     android:orientation="horizontal">
 
@@ -242,7 +164,7 @@
                     android:id="@+id/ll_album"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:paddingTop="5dp"
                     android:background="#FAF6F6"
                     android:orientation="horizontal">
 
@@ -298,7 +220,7 @@
                     android:id="@+id/ll_baihatghiam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:paddingTop="5dp"
                     android:background="#FAF6F6"
                     android:orientation="horizontal">
 
@@ -353,7 +275,7 @@
                     android:id="@+id/ll_upload"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:paddingTop="5dp"
                     android:background="#FAF6F6"
                     android:orientation="horizontal">
 
@@ -396,79 +318,5 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
-
-        //Khung phát nhạc
-
-        <RelativeLayout
-            android:id="@+id/ll_nhacdangphat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/sc_chucnang"
-            android:layout_gravity="bottom"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/ll_baihatphat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FAF6F6"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:layout_alignParentBottom="true"
-                android:paddingBottom="100dp">
-
-                <LinearLayout
-                    android:layout_width="90dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
-
-                    <ImageView
-                        android:id="@+id/iv_baihatphat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true">
-
-                    </ImageView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/playfair_display_bold"
-
-                        android:text="Havana"
-                        android:textColor="@color/black"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif"
-                        android:text="Camila Cabello feat. Young Thug"
-                        android:textColor="@color/black"
-                        android:textSize="12dp"></TextView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:gravity="end|center_vertical"
-                    android:paddingRight="20dp">
-
-                    <Button
-                        android:id="@+id/btn_phat_dungnhac"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/icon_tamdung"></Button>
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-    </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
