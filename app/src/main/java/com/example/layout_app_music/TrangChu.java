@@ -70,7 +70,7 @@ public class TrangChu extends AppCompatActivity  {
                 mDrawerLayout.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.nav_about:
-
+                        about();
                         break;
                 }
                 return true;
