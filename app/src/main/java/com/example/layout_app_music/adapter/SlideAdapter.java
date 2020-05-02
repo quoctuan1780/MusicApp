@@ -1,4 +1,4 @@
-package com.example.layout_app_music.animation;
+package com.example.layout_app_music.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,13 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.layout_app_music.R;
+import com.example.layout_app_music.model.Slide;
 
 import java.util.ArrayList;
 
 public class SlideAdapter extends PagerAdapter {
-    private ArrayList<SlideAnimation> listQuangcao;
+    private ArrayList<Slide> listQuangcao;
     private LayoutInflater layoutInflater;
-    public SlideAdapter(Context context, ArrayList<SlideAnimation> listquangcao){
+    public SlideAdapter(Context context, ArrayList<Slide> listquangcao){
         this.listQuangcao = listquangcao;
         layoutInflater = LayoutInflater.from(context);
     }
@@ -39,7 +40,7 @@ public class SlideAdapter extends PagerAdapter {
         ImageView iv = (ImageView) view.findViewById(R.id.iv_quangcao);
 
         //Đổ dữ liệu vào đối tượng
-        SlideAnimation mau = listQuangcao.get(position);
+        Slide mau = listQuangcao.get(position);
         iv.setImageResource(mau.getHinh());
 
         //Thêm vào container

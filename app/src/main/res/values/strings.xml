@@ -4,7 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Menu</string>
-    <string name="theme_color">Màu nền</string>
+    <string name="login">Đăng nhập</string>
     <string name="sleep_timer">Thời gian nghỉ</string>
     <string name="rate_app">Đánh giá ứng dụng này</string>
     <string name="about">Thông tin</string>
@@ -12,4 +12,13 @@
     <string name="favorites">Bài hát yêu thích</string>
     <string name="about_text">Phiên bản app nhạc đầu tiên từ nhóm HTTT phát triển</string>
     <string name="ok">Ok</string>
+    <string name="title_activity_danh_dach_nhac_offline">DanhDachNhacOffline</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

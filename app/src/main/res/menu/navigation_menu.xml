@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_theme_color"
+            android:id="@+id/nav_login"
             android:icon="@drawable/theme_color_icon"
-            android:title="@string/theme_color" />
+            android:title="@string/login" />
         <item
             android:id="@+id/nav_sleep_timer"
             android:icon="@drawable/timer_icon"

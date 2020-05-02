@@ -8,8 +8,8 @@
 
     <ViewFlipper
         android:id="@+id/background_login"
-        android:layout_width="378dp"
-        android:layout_height="260dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/bt_dangki"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="280dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
@@ -56,8 +56,8 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="320dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
@@ -75,8 +75,8 @@
 
     <EditText
         android:id="@+id/edEmail"
-        android:layout_width="320dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
@@ -94,8 +94,8 @@
 
     <EditText
         android:id="@+id/ed_matkhau"
-        android:layout_width="320dp"
-        android:layout_height="62dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
@@ -114,7 +114,7 @@
     <RadioButton
         android:id="@+id/rd_dieukhoan"
         android:layout_width="316dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="82dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="61dp"

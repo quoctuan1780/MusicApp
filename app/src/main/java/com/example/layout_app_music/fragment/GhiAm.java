@@ -1,4 +1,4 @@
-package com.example.layout_app_music.animation;
+package com.example.layout_app_music.fragment;
 
 import android.os.Bundle;
 

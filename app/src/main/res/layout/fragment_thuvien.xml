@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:scrollbars="none"
     android:fillViewport="true"
-    tools:context=".animation.ThuVien">
+    tools:context=".fragment.ThuVien">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
         <LinearLayout
             android:id="@+id/ll_quangcao"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/vp_quangcao"
                 android:layout_width="match_parent"
@@ -27,7 +28,8 @@
             android:id="@+id/ll_thuvien"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ll_quangcao">
+            android:layout_below="@id/ll_quangcao"
+            android:paddingTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,7 +43,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ll_thuvien">
+            android:layout_below="@id/ll_thuvien"
+            android:paddingTop="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

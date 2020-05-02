@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.layout_app_music" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.layout_app_music">
 
     <application
         android:allowBackup="true"
@@ -8,18 +9,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".DanhDachNhacOffline"
+            android:label="@string/title_activity_danh_dach_nhac_offline"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DangNhap"></activity>
-        <activity android:name=".DangKi"></activity>
-        <activity android:name=".TrangChu"></activity>
-
+        <activity android:name=".DangNhap" />
+        <activity android:name=".DangKi" />
+        <activity android:name=".TrangChu" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

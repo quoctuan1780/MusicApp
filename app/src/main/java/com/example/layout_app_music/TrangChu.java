@@ -2,6 +2,7 @@ package com.example.layout_app_music;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -20,11 +21,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
-import com.example.layout_app_music.animation.BangXepHang;
-import com.example.layout_app_music.animation.ChucNangAdapter;
-import com.example.layout_app_music.animation.GhiAm;
-import com.example.layout_app_music.animation.Online;
-import com.example.layout_app_music.animation.ThuVien;
+import com.example.layout_app_music.fragment.BangXepHang;
+import com.example.layout_app_music.adapter.ChucNangAdapter;
+import com.example.layout_app_music.fragment.GhiAm;
+import com.example.layout_app_music.fragment.Online;
+import com.example.layout_app_music.fragment.ThuVien;
 import com.example.layout_app_music.custom_view.AnhBoTron;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -48,7 +49,7 @@ public class TrangChu extends AppCompatActivity  {
         addTabs(vp_chucnang);
         tabLayout.setupWithViewPager(vp_chucnang);
         TaoBieuTuongChoTab();
-        TaoAnhNhacDangPhat();
+//        TaoAnhNhacDangPhat();
         init();
     }
 
@@ -69,6 +70,12 @@ public class TrangChu extends AppCompatActivity  {
                 item.setChecked(true);
                 mDrawerLayout.closeDrawers();
                 switch (item.getItemId()) {
+                    case R.id.nav_login:
+                    {
+                        Intent dangnhap = new Intent(TrangChu.this, DangNhap.class);
+                        startActivity(dangnhap);
+                        break;
+                    }
                     case R.id.nav_about:
                         about();
                         break;
@@ -96,13 +103,13 @@ public class TrangChu extends AppCompatActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-    private void TaoAnhNhacDangPhat(){
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.tdd);
-        Bitmap circularBitmap = AnhBoTron.getRoundedCornerBitmap(bitmap, 100);
-
-        imageView = (ImageView) findViewById(R.id.iv_baihatphat);
-        imageView.setImageBitmap(circularBitmap);
-    }
+//    private void TaoAnhNhacDangPhat(){
+//        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.tdd);
+//        Bitmap circularBitmap = AnhBoTron.getRoundedCornerBitmap(bitmap, 100);
+//
+//        imageView = (ImageView) findViewById(R.id.iv_baihatphat);
+//        imageView.setImageBitmap(circularBitmap);
+//    }
 
     private void TaoBieuTuongChoTab(){
         TextView ThuVien = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
